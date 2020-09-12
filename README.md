@@ -26,7 +26,7 @@ Feature importances of the second degree polynomial features, without tna, were 
 
 I then determined how many of these top important attributes to use, and how many neighbours to use in the kNN model. I carried out an exhaustive search to find these values. In the end, the strongest model proved to be a 24-NN classifier with features [m2, n2, p1, c3<sup>2</sup>, c3 m2, c3 n2, m1 p3, n2<sup>2</sup>, n3<sup>2</sup>, n3 p1, p2<sup>2</sup>], giving an AUC score of 0.7726.
 
-<img src="https://i.imgur.com/FSS5QdK.png" width="450"> <img src="https://i.imgur.com/zkiIY9H.png" width="450">
+<img src="https://i.imgur.com/FSS5QdK.png" width="400"> <img src="https://i.imgur.com/zkiIY9H.png" width="400">
 *Figure 2 (left): Highest Gini impurity values of 2nd order polynomial features for class prediction.*
 
 *Figure 3 (right): AUC against K (number of neighbours). Optimum K was 24.*
@@ -36,7 +36,7 @@ TNA prediction
 
 TNA predictions were tested using Lasso, Ridge and Decision Tree regression. Using the second order polynomial features on the decision tree regressor, with a max depth of 5, gave an R2 score of 0.7647. The same features were tested using Lasso and Ridge, giving R2 scores of 0.9223 and 0.9145 respectively. Although the decision tree was not the most accurate model, it did provide us with the feature importances, indicating that c3\*m2 and n3<sup>2</sup> were the most predictive features, as shown in Figure 4. After an exhaustive search to find the optimum value of alpha for Ridge and Lasso, the strongest model proved to be Lasso with features [n3, p1, p3, c1 m1, c1\*p2, c2 m1, c3\*m2, m1\*p2, n3<sup>2</sup>] and an alpha value of 0.0011, giving an R2 score of 0.9230.
 
-<img src="https://i.imgur.com/FSS5QdK.png" width="450"> <img src="https://i.imgur.com/3fxKqQw.png" width="450">
+<img src="https://i.imgur.com/FSS5QdK.png" width="400"> <img src="https://i.imgur.com/3fxKqQw.png" width="400">
 *Figure 2 (left): Highest Gini impurity values of 2nd order polynomial features for TNA prediction.*
 
 *Figure 3 (right): R2 against alpha for Ridge regression. Optimum alpha value was 0.0011.*
